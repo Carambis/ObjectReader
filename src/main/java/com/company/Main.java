@@ -18,7 +18,7 @@ public class Main {
     private static final Logger logger = LogManager.getRootLogger();
 
     public static void main(String[] args) throws IOException {
-        Observable.interval(0, 1, TimeUnit.SECONDS)
+        Observable.interval(0, 1, TimeUnit.MINUTES)
                 .map(result -> reader.getDtos())
                 .subscribe(executor::execute, error -> logger.error(error.getMessage()));
         System.in.read();

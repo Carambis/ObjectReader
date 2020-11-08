@@ -1,8 +1,9 @@
 package com.company;
 
 import com.company.bidhander.BidExecutor;
+import com.company.bidhander.impl.BidExecutorForQueue;
 import com.company.reader.impl.BidFileReaderImpl;
-import com.company.bidhander.impl.BidExecutorImpl;
+import com.company.bidhander.impl.BidExecutorForObject;
 import com.company.reader.BidReader;
 import io.reactivex.rxjava3.core.Observable;
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
 
     private static final BidReader reader = new BidFileReaderImpl();
-    private static final BidExecutor executor = new BidExecutorImpl();
+    private static final BidExecutor executor = new BidExecutorForObject();
     private static final Logger logger = LogManager.getRootLogger();
 
     public static void main(String[] args) throws IOException {
